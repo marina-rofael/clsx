@@ -33,16 +33,7 @@ jobs:
 
     - name: (coverage) Test
       run: c8 --include=src npm test
-     
-    - name: Set up Git for commit
-      run: |
-        git config --global user.name "marina-rofael"
-        git config --global user.email "rofaelmarina@gmail.com"  
-    # Reset Git to Clean State
-    - name: Reset Git Working Directory
-      run: |
-        git reset --hard
-        git clean -fd    
+        
     # Increment the version (this bumps patch version by default)
     - name: Increment Version
       run: npm version patch
@@ -50,10 +41,11 @@ jobs:
      # Commit and push updated package.json
     - name: Commit Changes
       run: |
+        git config --global user.name "marina-rofael"
+        git config --global user.email "rofaelmarina@gmail.com" 
+        git add . 
+        git commit -m "chore: bump version" 
         git push
-      #  git add . 
-      #  git commit -m "chore: bump version" 
-        
         
     - name: Publish to GitHub Packages
       run: npm publish --registry=https://npm.pkg.github.com
