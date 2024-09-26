@@ -54,8 +54,9 @@ jobs:
     - name: Commit Changes
       run: |
         git add . 
-        git commit -m "chore: bump version" 
-        git push
+        git commit -m "chore: bump version" || echo "No changes to commit"
+        git push || echo "Nothing to push"
+    
         
     - name: Publish to GitHub Packages
       run: npm publish --registry=https://npm.pkg.github.com
