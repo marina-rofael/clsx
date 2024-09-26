@@ -38,9 +38,9 @@ jobs:
       
 
     - name: Publish to GitHub Packages
-        run: npm publish --registry=https://npm.pkg.github.com
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.TOKEN }}  # GitHub token for authentication
+      run: npm publish --registry=https://npm.pkg.github.com
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.TOKEN }}  # GitHub token for authentication
           
 # - name: (coverage) Report
 #       if: matrix.nodejs >= 18
