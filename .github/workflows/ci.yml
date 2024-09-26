@@ -42,13 +42,6 @@ jobs:
     # Increment the version (this bumps patch version by default)
     - name: Increment Version
       run: npm version patch 
-
-      # Commit and push updated package.json
-    - name: Commit Changes
-      run: |
-        git add . 
-        git commit -m "chore: bump version"
-        git push
         
     - name: Publish to GitHub Packages
       run: npm publish --registry=https://npm.pkg.github.com
