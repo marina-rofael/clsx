@@ -35,7 +35,10 @@ jobs:
     - name: (coverage) Test
       run: c8 --include=src npm test
       #if: matrix.nodejs >= 18
-      
+    - name: Set up Git for commit
+      run: |
+        git config --global user.name "marina-rofael"
+        git config --global user.email "rofaelmarina@gmail.com"  
     - name: Increment version number
       run: npm version patch  # Automatically increment the version (use patch, minor, or major as needed)
 
