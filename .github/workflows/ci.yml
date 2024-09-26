@@ -38,7 +38,11 @@ jobs:
       run: |
         git config --global user.name "marina-rofael"
         git config --global user.email "rofaelmarina@gmail.com"  
-        
+    # Reset Git to Clean State
+    - name: Reset Git Working Directory
+      run: |
+        git reset --hard
+        git clean -fd    
     # Increment the version (this bumps patch version by default)
     - name: Increment Version
       run: npm version patch
