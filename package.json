@@ -33,11 +33,7 @@
       }
     }
   },
-  "author": {
-    "name": "Luke Edwards",
-    "email": "luke.edwards05@gmail.com",
-    "url": "https://lukeed.com"
-  },
+  "author": "marina-rofael",
   "engines": {
     "node": ">=6"
   },
