@@ -36,6 +36,8 @@ jobs:
       run: c8 --include=src npm test
       #if: matrix.nodejs >= 18
       
+    - name: Increment version number
+      run: npm version patch  # Automatically increment the version (use patch, minor, or major as needed)
 
     - name: Publish to GitHub Packages
       run: npm publish --registry=https://npm.pkg.github.com
