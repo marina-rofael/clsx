@@ -40,6 +40,12 @@ jobs:
         git reset --hard
         git clean -fd    
         
+    # setup git
+    - name: Setup git
+      run: |
+        git config --global user.name "marina-rofael"
+        git config --global user.email "rofaelmarina@gmail.com"
+        
     # Increment the version (this bumps patch version by default)
     - name: Increment Version
       run: npm version patch
@@ -47,8 +53,6 @@ jobs:
      # Commit and push updated package.json
     - name: Commit Changes
       run: |
-        git config --global user.name "marina-rofael"
-        git config --global user.email "rofaelmarina@gmail.com" 
         git add . 
         git commit -m "chore: bump version" 
         git push
