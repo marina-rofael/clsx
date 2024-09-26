@@ -41,18 +41,22 @@ jobs:
         
     # Increment the version (this bumps patch version by default)
     - name: Increment Version
-      run: npm version patch 
+      run: npm version patch
+      
+     # Commit and push updated package.json
+    - name: Commit Changes
+      run: |
+        git add . 
+        git commit -m "chore: bump version"   
         
     - name: Publish to GitHub Packages
       run: npm publish --registry=https://npm.pkg.github.com
       env:
         NODE_AUTH_TOKEN: ${{ secrets.TOKEN }}  # GitHub token for authentication
         
-  # Commit and push updated package.json
-    - name: Commit Changes
+  # push updated package.json
+    - name: Push Changes
       run: |
-        git add . 
-        git commit -m "chore: bump version"
         git push
         
           
