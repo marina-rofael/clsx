@@ -57,7 +57,7 @@ jobs:
         git commit -m "chore: bump version" || echo "No changes to commit"
         git push || echo "Nothing to push"
     
-        
+     # publish to registry   
     - name: Publish to GitHub Packages
       run: npm publish --registry=https://npm.pkg.github.com
       env:
