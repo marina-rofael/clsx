@@ -7,7 +7,7 @@
         - completed
     env:
       owner: "marina-rofael"
-      repo: "react-app"
+      repo: "marina-rofael/react-app"
       
     jobs:
       trigger-app-workflow:
