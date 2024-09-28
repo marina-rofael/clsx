@@ -1,6 +1,6 @@
 {
   "name": "@marina-rofael/clsx",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "repository": "marina-rofael/clsx",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
