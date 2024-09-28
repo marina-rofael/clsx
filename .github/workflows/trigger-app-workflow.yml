@@ -2,7 +2,7 @@
     name: Trigger Repo B GitHub workflow
     on:
       workflow_run:
-        workflows: [CI/CD Pipeline for Node.js Project] # Name of GitHub workflow to trigger in target repository
+        workflows: [CI] # Name of GitHub workflow to trigger in target repository
         types:
         - completed
     env:
